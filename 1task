@@ -3,15 +3,12 @@
 cur_date=$(date "+DATE: %D, TIME: %T")
 log_date=$(date "+%F")
 
-mkdir test
+mkdir ~/test &&
+{	
+  touch ~/report 
+  echo -e "\ncatalog test was created successfully" >> ~/report 
+  touch ~/test/$log_date
+}  
 
-if [[ -d "$test" ]]; then
-  true 
-else
-  touch report 
-  echo "catalog test was created successfully" >> report 
-  touch test/$log_date  
-fi
-
-ping www.net_nikogo.ru || echo -e "\n\n${cur_date} error ping send " >> report
+ping www.net_nikogo.ru || echo -e "\n${cur_date} error ping send " >> ~/report
 
