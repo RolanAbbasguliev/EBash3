@@ -1,0 +1,8 @@
+#!/bin/bash
+
+x=69
+
+while true;
+do 
+  x+=69 #>> afile
+done
